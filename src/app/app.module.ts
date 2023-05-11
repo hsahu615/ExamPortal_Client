@@ -14,12 +14,30 @@ import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http'
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatCardModule} from '@angular/material/card';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatSelectModule} from '@angular/material/select';
 import { HomeComponent } from './pages/home/home.component';
 import {MatToolbar, MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { AuthInterceptorProviders } from './services/auth.interceptor';
 import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-dashboard.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import {MatListModule} from '@angular/material/list';
+import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
+import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
+import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
+import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
+import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.component';
+import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
+import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
+import { ViewQuestionsComponent } from './pages/admin/view-questions/view-questions.component';
+import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { UserSidebarComponent } from './pages/user/user-sidebar/user-sidebar.component';
+import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
+import { StartComponent } from './pages/user/start/start.component';
+import { InstructionsComponent } from './pages/user/instructions/instructions.component'; 
 
 @NgModule({
   declarations: [
@@ -30,7 +48,21 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
     SignupComponent,
     HomeComponent,
     AdminDashboardComponent,
-    UserDashboardComponent
+    UserDashboardComponent,
+    ProfileComponent,
+    SidebarComponent,
+    WelcomeComponent,
+    ViewCategoriesComponent,
+    AddCategoryComponent,
+    ViewQuizzesComponent,
+    AddQuizComponent,
+    UpdateQuizComponent,
+    ViewQuestionsComponent,
+    AddQuestionComponent,
+    UserSidebarComponent,
+    LoadQuizComponent,
+    StartComponent,
+    InstructionsComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +76,11 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
     HttpClientModule,
     MatSnackBarModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatListModule,
+    MatSelectModule,
+    MatSlideToggleModule,
+    CKEditorModule
   ],
   providers: [
     AuthInterceptorProviders
