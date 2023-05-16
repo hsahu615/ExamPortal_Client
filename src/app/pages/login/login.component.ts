@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
             // redirect... ADMIN: admin-dashboard
             // redirect... NORMAL: normal-dashboard
             if(this.loginService.getUserRole()=='ADMIN'){
-              this.router.navigate(['/admin']);
+              this.router.navigate(['/admin/profile']);
               this.loginService.loginStatusSubject.next(true);
             } else if(this.loginService.getUserRole()=='NORMAL'){
               this.router.navigate(['/user-dashboard/0']);
