@@ -1,0 +1,45 @@
+<mat-card>
+  <p class="text-center display-6">Your profile details</p>
+  <mat-card-content>
+    <div class="container">
+      <div class="container text-center">
+        <img
+          src="https://i.ibb.co/YkFxFZH/default-profile.png"
+          class="profile-image"
+          alt=""
+        />
+        <h1 class="text-center my-2">Himanshu Sahu</h1>
+      </div>
+      <div class="row my-3">
+        <div class="col-md-10 offset-md-1">
+          <table class="profile-table w-100 text-center">
+            <tr>
+              <td>username</td>
+              <td>{{ user.username }}</td>
+            </tr>
+            <tr>
+              <td>userid</td>
+              <td>{{ user.id }}</td>
+            </tr>
+            <tr *ngIf="user.phone">
+              <td>Phone</td>
+              <td>{{ user.phone }}</td>
+            </tr>
+            <tr>
+              <td>Role</td>
+              <td>{{ user.authorities[0].authority }}</td>
+            </tr>
+            <tr>
+              <td>Status</td>
+              <td>{{ user.enabled ? "Active" : "Inactive" }}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+  <mat-card-actions class="text-center">
+    <button mat-raised-button color="primary">Update</button>
+    <button mat-raised-button color="accent">Share</button>
+  </mat-card-actions>
+</mat-card>

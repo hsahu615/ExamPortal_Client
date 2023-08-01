@@ -1,0 +1,86 @@
+<div class="container-fluid" *ngIf="!isSubmit">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <ng-container *ngIf="questions">
+        <h1 class="mt-3">On going quiz: {{ questions[0].quiz.title }}</h1>
+        <!-- <mat-card></mat-card> -->
+      </ng-container>
+      <mat-card *ngFor="let q of questions; let i = index" class="mt-3">
+        <mat-card-content>
+          Q {{ i + 1 }}):
+          <p [innerHTML]="q.content" class="ms-1"></p>
+        </mat-card-content>
+        <mat-divider></mat-divider>
+        <div class="row">
+          <div class="col-md-6 mt-2">
+            <input
+              type="radio"
+              [(ngModel)]="q.givenAnswer"
+              [name]="i + ''"
+              [value]="q.option1"
+            />
+            {{ q.option1 }}
+          </div>
+          <div class="col-md-6 mt-2">
+            <input
+              type="radio"
+              [(ngModel)]="q.givenAnswer"
+              [name]="i + ''"
+              [value]="q.option2"
+            />
+            {{ q.option2 }}
+          </div>
+        </div>
+        <div class="row" *ngIf="q.option3 || q.option4">
+          <div class="col-md-6 mt-2">
+            <input
+              type="radio"
+              *ngIf="q.option3"
+              [name]="i + ''"
+              [value]="q.option3"
+              [(ngModel)]="q.givenAnswer"
+            />
+            {{ q.option3 }}
+          </div>
+          <div class="col-md-6 mt-2">
+            <input
+              type="radio"
+              *ngIf="q.option4"
+              [value]="q.option4"
+              [name]="i + ''"
+              [(ngModel)]="q.givenAnswer"
+            />
+            {{ q.option4 }}
+          </div>
+        </div>
+      </mat-card>
+      <div class="mt-3 text-center container">
+        <button mat-raised-button (click)="submitQuiz()" color="primary">
+          Submit Quiz
+        </button>
+      </div>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>
+
+<div class="row mt-3" *ngIf="isSubmit">
+  <div class="col-md-6 offset-md-3">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title> </mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="text-center">
+        <h1>Marks got: {{ marksGot }}</h1>
+        <h1>Correct Answers: {{ correctAnswers }}</h1>
+        <h1>Questions Attempted: {{ attempted }}</h1>
+      </mat-card-content>
+      <mat-card-actions class="text-center">
+        <button mat-raised-button color="accent" (click)="goBack()">
+          Go Back
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
