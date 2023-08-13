@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "homepage": "https://hsahu615.github.io/ExamPortal_Client",
+    "publish": "gh-pages -d src"
   },
   "private": true,
   "dependencies": {
@@ -24,6 +26,7 @@
     "@ckeditor/ckeditor5-build-classic": "^37.1.0",
     "bootstrap": "^5.2.3",
     "bootstrap-grid-only-css": "^4.1.3",
+    "gh-pages": "^5.0.0",
     "rxjs": "~7.5.0",
     "sweetalert2": "^11.7.3",
     "tslib": "^2.3.0",
